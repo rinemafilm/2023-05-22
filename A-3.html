@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강원천문대</title>
+    <script src="/script/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="/css/a3_common.css">
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <h1><a href="#"><img src="./images/A-3/logo.png" alt="강원천문대 로고"></a></h1>
+            <nav>
+                <ul>
+                    <li class="gnb"><a href="#">강원천문대</a>
+                    <ul class="sub">
+                        <li><a href="#">천문대소개</a></li>
+                        <li><a href="#">인사말</a></li>
+                        <li><a href="#">오시는길</a></li>
+                    </ul>
+                    </li>
+                    <li class="gnb"><a href="#">이용안내</a>
+                    <ul class="sub">
+                        <li><a href="#">프로그램</a></li>
+                        <li><a href="#">관람시간표</a></li>
+                        <li><a href="#">이달의 별자리</a></li>
+                    </ul>
+                    </li>
+                    <li class="gnb"><a href="#">천문대예약</a>
+                    <ul class="sub">
+                        <li><a href="#">예약하기</a></li>
+                        <li><a href="#">예약확인</a></li>
+                        <li><a href="#">예약취소</a></li>
+                    </ul>
+                    </li>
+                    <li class="gnb"><a href="#">커뮤니티</a>
+                    <ul class="sub">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">방문후기</a></li>
+                        <li><a href="#">자유게시판</a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="slider">
+            <div class="slide">
+                <div class="item"><a href="#"><img src="./images/A-3/slide1.png" alt="슬라이드1"></a></div>
+                <div class="item"><a href="#"><img src="./images/A-3/slide2.png" alt="슬라이드2"></a></div>
+                <div class="item"><a href="#"><img src="./images/A-3/slide3.png" alt="슬라이드3"></a></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.gnb').hover(
+            function(){$(this).find('ul').stop().slideDown()},
+            function(){$(this).find('ul').stop().slideUp()}
+        )
+
+        let i = 0
+        $('.slide div').eq(i).show()
+        setInterval(function(){
+            let j = (i+1)%3
+            $('.slide div').eq(i).fadeOut()
+            $('.slide div').eq(j).fadeIn()
+            i=j
+        },3000)
+    </script>
+</body>
+</html>
